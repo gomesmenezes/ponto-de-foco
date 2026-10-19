@@ -1,0 +1,5 @@
+{
+  "name": "@ponto-de-foco/api", "version": "0.1.0", "private": true, "type": "module",
+  "scripts": {"dev": "tsx watch src/server.ts", "typecheck": "tsc --noEmit", "build": "tsc"},
+  "dependencies": {"fastify": "5.12.7"}
+}
