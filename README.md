@@ -2,6 +2,8 @@
 
 **Entrega da semana 1 · 19/10/2026 · Projeto Integrador · Unifacisa**
 
+**Para apresentar:** [PDF curto para upload](output/pdf/Ponto-de-Foco-Semana-1.pdf) · [Resumo da entrega](ENTREGA-SEMANA-1.md) · [Roteiro de demonstração](docs/semana-1.md)
+
 Protótipo navegável de coleta de visitas para Agentes de Combate às Endemias e painel de priorização geográfica em Campina Grande, PB. O projeto parte do Termo de Abertura e do [User Story Mapping / User Flow](https://whimsical.com/ponto-de-foco-story-map-user-flow-do-mvp-AqoQJKz7x3QnCbGWqKkcwB).
 
 > Esta entrega cobre as telas base, a navegação e o ambiente inicial. Login, preparação, registros e sincronização são demonstrações em memória. Não há autenticação real, banco conectado, coleta real, garantia off-line ou aplicação publicada. Atualizar a página reinicia os dados fictícios.
@@ -28,15 +30,15 @@ O código pode ser consultado pelo link do repositório no GitHub. Este link nã
 
 ## Stack escolhida e alinhamento ao TAP
 
-| Camada | Tecnologia | Situação na semana 1 | Relação com o TAP |
-| --- | --- | --- | --- |
-| Telas do agente / protótipo | React 19, TypeScript, Vite | Implementado e navegável no navegador | Prototipação das telas de coleta e navegação do User Flow |
-| Painel web | React, Leaflet, OpenStreetMap | Mapa com exemplos, prioridades fixas e histórico filtrável | Visualização geográfica aberta |
-| API | Node.js, TypeScript, Fastify | Esqueleto com `GET /health` | Base para serviço de integração e hospedagem posteriores |
-| Banco central | PostgreSQL com PostGIS | Modelo SQL inicial, sem conexão ou migração executada | Banco relacional com dados geográficos |
-| App Android / multiplataforma | React Native com Expo, TypeScript | Escolha documentada; app nativo ainda não implementado | Desenvolvimento móvel e testes em aparelho Android |
-| Armazenamento no aparelho | SQLite via expo-sqlite | Planejado; sem persistência nesta entrega | Coleta off-line e futura fila de sincronização |
-| Versionamento / verificações | Git, GitHub, npm workspaces, Node test runner, TypeScript | Commits iniciais e workflow de verificação | Acompanhamento técnico do projeto |
+| Camada                        | Tecnologia                                                | Situação na semana 1                                       | Relação com o TAP                                         |
+| ----------------------------- | --------------------------------------------------------- | ---------------------------------------------------------- | --------------------------------------------------------- |
+| Telas do agente / protótipo   | React 19, TypeScript, Vite                                | Implementado e navegável no navegador                      | Prototipação das telas de coleta e navegação do User Flow |
+| Painel web                    | React, Leaflet, OpenStreetMap                             | Mapa com exemplos, prioridades fixas e histórico filtrável | Visualização geográfica aberta                            |
+| API                           | Node.js, TypeScript, Fastify                              | Esqueleto com `GET /health`                                | Base para serviço de integração e hospedagem posteriores  |
+| Banco central                 | PostgreSQL com PostGIS                                    | Modelo SQL inicial, sem conexão ou migração executada      | Banco relacional com dados geográficos                    |
+| App Android / multiplataforma | React Native com Expo, TypeScript                         | Escolha documentada; app nativo ainda não implementado     | Desenvolvimento móvel e testes em aparelho Android        |
+| Armazenamento no aparelho     | SQLite via expo-sqlite                                    | Planejado; sem persistência nesta entrega                  | Coleta off-line e futura fila de sincronização            |
+| Versionamento / verificações  | Git, GitHub, npm workspaces, Node test runner, TypeScript | Commits iniciais e workflow de verificação                 | Acompanhamento técnico do projeto                         |
 
 As versões instaladas estão fixadas no `package-lock.json`. Referências: [Vite](https://vite.dev/guide/), [Expo SQLite](https://docs.expo.dev/versions/latest/sdk/sqlite/), [Leaflet](https://leafletjs.com/reference.html) e [PostGIS](https://postgis.net/docs/).
 
@@ -56,16 +58,16 @@ docs/evidencias/    Capturas do protótipo verificadas no navegador
 
 As rotas usam `#` para permitir navegação sem configuração especial de servidor.
 
-| Rota | Tela / estado | Histórias |
-| --- | --- | --- |
-| `#/acesso` | Acesso demonstrativo e exemplo de erro de login | US01 |
-| `#/preparacao` | Microárea, rota e preparação simulada | US02–US03 |
-| `#/visitas` | Lista da rota e início de visita | US04, US09 |
-| `#/visita/nova` | Identificação, inspeção, focos e observações | US05–US08 |
-| `#/visita/confirmacao` | Confirmação e retorno à lista | US08–US09 |
-| `#/sincronizacao` | Fila, rede simulada, aceite/rejeição e consolidação visual | US09–US12 |
-| `#/painel` | Mapa e prioridades ilustrativas | US13–US14 |
-| `#/historico` | Consulta por microárea e período | US15 |
+| Rota                   | Tela / estado                                              | Histórias  |
+| ---------------------- | ---------------------------------------------------------- | ---------- |
+| `#/acesso`             | Acesso demonstrativo e exemplo de erro de login            | US01       |
+| `#/preparacao`         | Microárea, rota e preparação simulada                      | US02–US03  |
+| `#/visitas`            | Lista da rota e início de visita                           | US04, US09 |
+| `#/visita/nova`        | Identificação, inspeção, focos e observações               | US05–US08  |
+| `#/visita/confirmacao` | Confirmação e retorno à lista                              | US08–US09  |
+| `#/sincronizacao`      | Fila, rede simulada, aceite/rejeição e consolidação visual | US09–US12  |
+| `#/painel`             | Mapa e prioridades ilustrativas                            | US13–US14  |
+| `#/historico`          | Consulta por microárea e período                           | US15       |
 
 Rotas internas exigem sessão demonstrativa. Lista e formulário também exigem microárea preparada. Login sem êxito retorna à tela de acesso; formulário incompleto permanece na etapa; cancelar descarta o rascunho; rede ausente e rejeição preservam a fila em memória. A preparação não baixa mapas ou dados para uso off-line.
 

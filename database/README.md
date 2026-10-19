@@ -2,13 +2,13 @@
 
 `schema.sql` é o desenho inicial do banco relacional com suporte geográfico. **Não há conexão com o protótipo e não foi aplicado a um servidor PostgreSQL nesta entrega.**
 
-| Entidade | Finalidade | Relações |
-| --- | --- | --- |
-| agents | Identificação do agente, com referência futura ao provedor de autenticação | 1:N visitas |
-| microareas | Microárea, código e centro geográfico opcional | 1:N imóveis |
-| properties | Código do imóvel, quarteirão e localização opcional | N:1 microárea; 1:N visitas |
-| visits | Resultado, observações e horários de coleta e recebimento | N:1 agente; N:1 imóvel |
-| visit_findings | Tipo de recipiente e quantidade de focos | N:1 visita |
+| Entidade       | Finalidade                                                                 | Relações                   |
+| -------------- | -------------------------------------------------------------------------- | -------------------------- |
+| agents         | Identificação do agente, com referência futura ao provedor de autenticação | 1:N visitas                |
+| microareas     | Microárea, código e centro geográfico opcional                             | 1:N imóveis                |
+| properties     | Código do imóvel, quarteirão e localização opcional                        | N:1 microárea; 1:N visitas |
+| visits         | Resultado, observações e horários de coleta e recebimento                  | N:1 agente; N:1 imóvel     |
+| visit_findings | Tipo de recipiente e quantidade de focos                                   | N:1 visita                 |
 
 Escolhas: UUIDs atribuídos pelo cliente para permitir futura coleta independente de rede; horários com fuso (`timestamptz`); coordenadas WGS84 em `geography(Point,4326)`; índices nas relações e nas colunas espaciais. A visita aponta para o imóvel, que determina a microárea, evitando duplicar essa relação.
 

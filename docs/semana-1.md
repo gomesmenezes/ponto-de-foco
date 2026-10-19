@@ -13,13 +13,13 @@ As US01–US15 foram representadas em interface. Isso não significa que todas a
 
 ## Correspondência com as cinco decisões do User Flow
 
-| Decisão | Caminho Sim | Caminho Não | Representação nesta entrega |
-| --- | --- | --- | --- |
-| Dados de acesso válidos? | Selecionar microárea | Mostrar erro e permitir tentar novamente | Campos demonstrativos; botão “Visualizar cenário de erro de acesso” |
-| Campos obrigatórios válidos? | Avançar no formulário | Permanecer na etapa e solicitar preenchimento | Campos obrigatórios básicos do navegador; sem validação de negócio/API |
-| Cancelou antes de salvar? | Descartar rascunho e retornar à lista | Continuar até a confirmação | Diálogo “Descartar esta visita?”; descarte sem registro parcial |
-| Há conexão? | Simular envio | Preservar fila e continuar visitas | Seletor de conexão fictícia na tela de sincronização |
-| Sincronização aceita? | Atualizar registros e painel demonstrativos | Exibir falha e preservar fila | Botões de envio aceito/rejeitado; nenhuma requisição de envio |
+| Decisão                      | Caminho Sim                                 | Caminho Não                                   | Representação nesta entrega                                            |
+| ---------------------------- | ------------------------------------------- | --------------------------------------------- | ---------------------------------------------------------------------- |
+| Dados de acesso válidos?     | Selecionar microárea                        | Mostrar erro e permitir tentar novamente      | Campos demonstrativos; botão “Visualizar cenário de erro de acesso”    |
+| Campos obrigatórios válidos? | Avançar no formulário                       | Permanecer na etapa e solicitar preenchimento | Campos obrigatórios básicos do navegador; sem validação de negócio/API |
+| Cancelou antes de salvar?    | Descartar rascunho e retornar à lista       | Continuar até a confirmação                   | Diálogo “Descartar esta visita?”; descarte sem registro parcial        |
+| Há conexão?                  | Simular envio                               | Preservar fila e continuar visitas            | Seletor de conexão fictícia na tela de sincronização                   |
+| Sincronização aceita?        | Atualizar registros e painel demonstrativos | Exibir falha e preservar fila                 | Botões de envio aceito/rejeitado; nenhuma requisição de envio          |
 
 ## Roteiro de apresentação — aproximadamente 3 minutos
 
